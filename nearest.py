@@ -9,6 +9,7 @@ dict = pd.read_csv('common-crawl/data/dict_r', delimiter=' ')
 idx2word = dict.set_index('idx').to_dict()['word']
 word2idx = dict.set_index('word').to_dict()['idx']
 
+# TODO duplication
 num_words = 500000
 dimension = 250
 
@@ -17,6 +18,7 @@ W_normalized_actual = None
 
 g_comp = tf.Graph()
 
+# build W + W_hat and a normalized copy from checkpoint
 with g_comp.as_default():
   W     = tf.Variable(tf.random_normal([num_words, dimension]))
   W_hat = tf.Variable(tf.random_normal([num_words, dimension]))

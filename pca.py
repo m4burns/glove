@@ -1,3 +1,5 @@
+# ripped straight from stackoverflow
+# http://stackoverflow.com/questions/13224362/principal-component-analysis-pca-in-python
 import numpy as NP
 from scipy import linalg as LA
 

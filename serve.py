@@ -25,6 +25,7 @@ def getpcanns(word):
   pca, eigval, eigvec = p.PCA(vecs)
   pca -= pca.mean(axis=0)
   pca /= np.abs(pca).max(axis=0)
+  # TODO why are there NaNs in the word list??
   res = [ { 'w': word if word == word else '', 'p': pca_vec.tolist(), 'd': float(val) } for word, pca_vec, val in zip(words, pca, nnv.values) ]
   return json.dumps(res)
 
